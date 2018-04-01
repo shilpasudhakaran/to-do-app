@@ -1,0 +1,25 @@
+
+<div class="container">
+
+    <div class="row details">
+    <div class="col">Add to-do</div>
+    <div class="col">My to-do (Click to remove)</div>
+    </div>
+
+
+    <div class="row">
+        <div class="col input-box">
+        <p>Add the things you want to do.</p>
+            <form>
+            <input type="text" placeholder="My to-do" name ="item" required [(ngModel)]="toDoText"><br>
+            <button type="submit" class="btn" (click)="addItem()">Add</button><br>
+         </form>
+        </div>
+        <div class="col input-box">
+
+            <p *ngFor="let goal of toDoItems;let i = index" (click)="removeItem(i)">
+                {{ goal }}
+            </p>
+        </div>
+    </div>
+</div>
